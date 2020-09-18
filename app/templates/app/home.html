@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Gallery{% endblock title %}
+
+{% block content %}
+    <!-- Titúlo da página -->
+    <h1><strong>Gallery</strong></h1>
+    <hr class="danger-color accent-2 mb-4 mt-0 d-inline-block mx-auto" style="width: 18%;"/>
+
+    <!--Section: Cards-->
+    <section class="text-center mt-2">
+        <!--Grid row-->
+        <div class="row mb-4 wow fadeIn">
+            <!--Grid column-->
+            <div class="col-lg-4 col-md-12 mb-4">
+
+                <!--Card-->
+                <div class="card">
+
+                    <!--Card image-->
+                    <div class="view overlay">
+                        <img src="img/primeira-copa-central.jpg" class="card-img-top" alt="" height="245">
+                        <a href="galeria/primeira-copa-central.html" target="_blank">
+                            <div class="mask rgba-white-slight"></div>
+                        </a>
+                    </div>
+
+                    <!--Card content-->
+                    <div class="card-body">
+                        <!--Title-->
+                        <h4 class="text-uppercase font-weight-bold card-title">PRIMEIRA COPA CENTRAL</h4>
+                        <!--Text-->
+                        <p class="card-text"><i class="fa fa-calendar" aria-hidden="true"></i> <strong>Data:</strong> 31/07/2016</p>
+                        <p class="card-text"><i class="fa fa-map-marker" aria-hidden="true"></i> <strong>Local:</strong> Maceió, AL</p>
+                        <a href="galeria/primeira-copa-central.html" target="_blank" class="btn btn-danger btn-md">Veja as fotos
+                            <i class="fa fa-play ml-2"></i>
+                        </a>
+                    </div>
+
+                </div>
+                <!--/.Card-->
+
+            </div>
+            <!--Grid column-->
+        </div>
+        <!--Grid row-->
+    </section>
+    <!--Section: Cards-->
+{% endblock content %}
