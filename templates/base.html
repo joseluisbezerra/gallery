@@ -5,8 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock title %}</title>
-    <!-- MDB icon -->
-    <link rel="icon" href="{% static 'img/mdb-favicon.ico' %}" type="image/x-icon">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
     <!-- Google Fonts -->
@@ -17,23 +15,18 @@
     <link rel="stylesheet" href="{% static 'css/mdb.min.css' %}">
     <!-- Custom styles -->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!-- Gallery -->
+    <link href="{% static 'css/imagelightbox.css' %}" rel="stylesheet"/>
 </head>
 <body>
     <!--Navbar -->
     <nav class="mb-1 navbar navbar-expand-lg navbar-dark danger-color">
-        <a class="navbar-brand" href="#">Gallery</a>
+        <a class="navbar-brand" href="{% url 'home' %}">Gallery</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent-4"
         aria-controls="navbarSupportedContent-4" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarSupportedContent-4">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="#">Home
-                        <span class="sr-only">(current)</span>
-                    </a>
-                </li>
-            </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink-4" data-toggle="dropdown"
@@ -52,7 +45,7 @@
     
     <!-- Main Content -->
     <main class="mt-4">
-        <div class="container text-center">
+        <div class="container">
             {% block content %}{% endblock content %}
         </div>
     </main>
@@ -68,5 +61,28 @@
     <script type="text/javascript" src="{% static 'js/mdb.min.js' %}"></script>
     <!-- Custom scripts -->
     <script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+    <!-- Galeria -->
+    <script type="text/javascript" src="{% static 'js/imagelightbox.js' %}"></script>
+    <script type="text/javascript">
+        $('a[data-imagelightbox="demo"]').imageLightbox({
+            selector:       'a[data-imagelightbox]',
+            id:             'imagelightbox',
+            allowedTypes:   'png|jpg|jpeg|gif',
+            animationSpeed: 250,
+            activity:       true,
+            arrows:         true,
+            button:         true,
+            caption:        true,
+            enableKeyboard: true,
+            lockBody:       true,
+            navigation:     true,
+            overlay:        true,
+            preloadNext:    true,
+            quitOnEnd:      true,
+            quitOnImgClick: true,
+            quitOnDocClick: true,
+            quitOnEscKey:   true
+        });
+    </script>
 </body>
 </html>
