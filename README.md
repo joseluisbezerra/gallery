@@ -1,5 +1,10 @@
 # Gallery
-Aplicação web de uma galeria feita com o framework Django
+Aplicação web de uma simples galeria de imagens de campeonatos feita com o framework Django
+
+# O que há no projeto:
+- Galeria organizada por albuns
+- Templates responsivas feitas com MDBootstrap
+- Paginação
 
 # Dependências
 - python - Versão 3.5+
