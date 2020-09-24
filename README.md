@@ -4,6 +4,7 @@ Aplicação web de uma simples galeria de imagens de campeonatos feita com o fra
 # O que há no projeto:
 - Galeria organizada por albuns
 - Templates responsivas feitas com MDBootstrap
+- Efeito lightbox
 - Paginação
 
 # Dependências
