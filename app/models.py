@@ -6,14 +6,14 @@ from django.dispatch import receiver
 def album_directory_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = "%s.%s" % (instance.slug, ext)
-    # file will be uploaded to MEDIA_ROOT/galeria/thumbnail/<slug>/<filename>
-    return 'galeria/thumbnail/{}/{}'.format(instance.slug, filename)
+    # file will be uploaded to MEDIA_ROOT/galeria/thumbnail/<filename>
+    return 'galeria/thumbnail/{}'.format(filename)
 
 def imagem_directory_path(instance, filename):
     ext = filename.split('.')[-1]
     filename = "%s.%s" % (instance.titulo, ext)
-    # file will be uploaded to MEDIA_ROOT/galeria/imagens/<slug>/<filename>
-    return 'galeria/imagens/{}/{}'.format(instance.album.slug, filename)
+    # file will be uploaded to MEDIA_ROOT/galeria/imagens/<filename>
+    return 'galeria/imagens/{}-{}'.format(instance.album.slug, filename)
 
 class Album(models.Model):
     titulo = models.CharField(max_length=100)

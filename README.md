@@ -3,7 +3,7 @@ Aplicação web de uma simples galeria de imagens de campeonatos feita com o fra
 
 # O que há no projeto
 - Galeria organizada por albuns 
-- Upload de imagens (Óbvio rsrs)
+- Upload de imagens
 - Templates responsivas feitas com MDBootstrap
 - Efeito lightbox
 - Paginação
@@ -13,6 +13,7 @@ Aplicação web de uma simples galeria de imagens de campeonatos feita com o fra
 - Django==2.2
 - Pillow==7.2.0
 - python-decouple==3.3
+- django-cleanup==5.1.0
 
 # Instalação
 1. Crie um ambiente virtual:
