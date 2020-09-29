@@ -16,12 +16,12 @@ def imagem_directory_path(instance, filename):
     return 'galeria/imagens/{}-{}'.format(instance.album.slug, filename)
 
 class Album(models.Model):
-    titulo = models.CharField(max_length=100)
-    descricao = models.TextField()
+    titulo = models.CharField(max_length=100, verbose_name='Título do evento')
+    descricao = models.TextField(verbose_name='Descrição do evento')
     slug = models.SlugField(max_length=100, blank=True, unique=True)
-    localizacao = models.CharField(max_length=100)
-    data = models.DateField()
-    thumbnail = models.ImageField(null=True, blank=True, upload_to=album_directory_path)
+    localizacao = models.CharField(max_length=100, verbose_name='Localização do evento')
+    data = models.DateField(verbose_name='Data do evento')
+    thumbnail = models.ImageField(null=True, blank=True, upload_to=album_directory_path, verbose_name='Cartaz do evento')
 
     def __str__(self):
         return self.titulo
@@ -29,14 +29,22 @@ class Album(models.Model):
     class Meta:
         ordering = ('data',)
 
+    class Meta:
+        verbose_name = "Álbum"
+        verbose_name_plural = "Álbuns"
+
 
 class Imagem(models.Model):
-    album = models.ForeignKey(Album, on_delete=models.CASCADE)
-    titulo = models.CharField(max_length=100)
+    album = models.ForeignKey(Album, on_delete=models.CASCADE, verbose_name='A qual álbum se refere')
+    titulo = models.CharField(max_length=100, verbose_name='Título da imagem')
     imagem = models.ImageField(null=True, blank=True, upload_to=imagem_directory_path)
 
     def __str__(self):
         return self.titulo
+
+    class Meta:
+        verbose_name = "Imagem"
+        verbose_name_plural = "Imagens"
 
 @receiver(post_save, sender=Album)
 def insert_slug(sender, instance, **kwargs):
