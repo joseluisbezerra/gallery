@@ -26,17 +26,11 @@ class Album(models.Model):
     class Meta:
         ordering = ('data',)
 
-    def __str__(self):
-        return self.titulo
-
 
 class Imagem(models.Model):
     album = models.ForeignKey(Album, on_delete=models.CASCADE)
     titulo = models.CharField(max_length=100)
     imagem = models.ImageField(null=True, blank=True, upload_to=imagem_directory_path)
-
-    def __str__(self):
-        return self.titulo
 
 @receiver(post_save, sender=Album)
 def insert_slug(sender, instance, **kwargs):
