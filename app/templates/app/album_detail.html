@@ -5,18 +5,18 @@
 
 {% block content %}
 <!-- Conteúdo -->
-<main class="mt-2 pt-5">
+<main class="mt-5">
     <div class="container">
         <!-- Titúlo da página -->
-        <h1 class="text-uppercase font-weight-bold text-left">{{ album.titulo }}</h1>
-        <hr class="danger-color accent-2 mb-2 mt-0 d-inline-block mx-auto text-left" style="width: 20%;"/>
+        <h3>{{ album.titulo }}</h3>
+        <hr class="bg-danger" style="width: 35%;"/>
         <p class="description">{{ album.descricao }}</p>
         <br/>
         <!-- Galeria -->
-        <div class="row text-center text-lg-left">
+        <div class="row text-lg-left text-center">
             {% for imagem in imagens %}
                 <div class="col-lg-3 col-md-4 col-6 mb-4">
-                    <a href="{{ imagem.imagem.url }}" data-imagelightbox="demo" class="d-block mb-4 h-100">
+                    <a href="{{ imagem.imagem.url }}" data-ilb2-caption="{{ imagem.titulo }}" data-imagelightbox="demo" class="d-block mb-4 h-100">
                         <img src="{{ imagem.imagem.url }}" class="img-fluid img-thumbnail">
                     </a>
                 </div>

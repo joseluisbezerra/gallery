@@ -1,19 +1,19 @@
 # Gallery
-Aplicação web de uma simples galeria de imagens de campeonatos feita com o framework Django
+Aplicação web de uma simples galeria de imagens feita com o framework Django
 
 # O que há no projeto
 - Galeria organizada por albuns 
 - Upload de imagens
-- Templates responsivas feitas com MDBootstrap
+- Templates responsivas feitas com Bootstrap 5
 - Efeito lightbox
 - Paginação
 
 # Dependências
 - python - Versão 3.5+
 - Django==2.2
-- Pillow==7.2.0
-- python-decouple==3.3
 - django-cleanup==5.1.0
+- Pillow==8.1.2
+- python-decouple==3.4
 
 # Instalação
 1. Crie um ambiente virtual:

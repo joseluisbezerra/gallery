@@ -16,12 +16,12 @@ def imagem_directory_path(instance, filename):
     return 'galeria/imagens/{}-{}'.format(instance.album.slug, filename)
 
 class Album(models.Model):
-    titulo = models.CharField(max_length=100, verbose_name='Título do evento')
-    descricao = models.TextField(verbose_name='Descrição do evento')
+    titulo = models.CharField(max_length=100, verbose_name='Título')
+    descricao = models.TextField(verbose_name='Descrição')
     slug = models.SlugField(max_length=100, blank=True, unique=True)
-    localizacao = models.CharField(max_length=100, verbose_name='Localização do evento')
-    data = models.DateField(verbose_name='Data do evento')
-    thumbnail = models.ImageField(null=True, blank=True, upload_to=album_directory_path, verbose_name='Cartaz do evento')
+    localizacao = models.CharField(max_length=100, verbose_name='Localização')
+    data = models.DateField(verbose_name='Data')
+    thumbnail = models.ImageField(null=True, blank=True, upload_to=album_directory_path, verbose_name='Thumbnail do álbum')
 
     def __str__(self):
         return self.titulo
