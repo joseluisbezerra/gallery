@@ -8,13 +8,6 @@ Aplicação web de uma simples galeria de imagens feita com o framework Django
 - Efeito lightbox
 - Paginação
 
-# Dependências
-- python - Versão 3.5+
-- Django==2.2
-- django-cleanup==5.1.0
-- Pillow==8.1.2
-- python-decouple==3.4
-
 # Instalação
 1. Crie um ambiente virtual:
 ```
